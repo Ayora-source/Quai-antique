@@ -1,0 +1,209 @@
+h1,h2,h3,h4 {
+  font-family: Lucida Calligraphy, serif ;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+p,label{
+   font-family: Lucida Bright, sans-serif;
+}
+p {
+  font-size: 24px;
+}
+
+.header {
+  vertical-align: inherit;
+  color: rgba(253, 189, 113, 1);
+  font-weight: bolder;
+}
+.banner1 {
+  position: relative;
+  height: 500px; /* Modifier la hauteur en fonction de vos besoins */
+  background-image: url("image/acceuil.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner2 {
+  position: relative;
+  height: 500px; /* Modifier la hauteur en fonction de vos besoins */
+  background-image: url("image/choco.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner3{
+  position: relative;
+  height: 500px; /* Modifier la hauteur en fonction de vos besoins */
+  background-image: url("images/fond.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+
+
+.center-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; /* 80% de la hauteur de la fenêtre */
+}
+
+.image1 {
+  max-width: 100%;
+  height: auto;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-box {
+  width: 33.33%; /* Trois images sur trois colonnes égales */
+  height: auto;
+  padding: 80px;
+  text-align: center;
+  position: relative;
+}
+
+.images3 {
+  width: 100%;
+  height: auto;
+}
+
+h3 {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 767px) {
+  .image-box {
+    width: 100%;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  padding-left: 10px;
+}
+
+.img1 {
+  max-width: 30%;
+}
+
+@media (max-width: 768px) {
+  .img1 {
+    max-width: 100%;
+  }
+}
+
+    form {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      -webkit-box-shadow: 0px 0px 36px -7px rgba(171,171,171,1);
+      -moz-box-shadow: 0px 0px 36px -7px rgba(171,171,171,1);
+      box-shadow: 0px 0px 36px -7px rgba(171,171,171,1);
+      border-radius: 20px;
+      margin-bottom: 2rem;
+    }
+    .contact-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+    }
+    input, textarea, select {
+      margin-bottom: 1rem;
+      border-radius: 7px;
+      padding: 0.3rem;
+      border: solid 1px;
+    }
+    textarea {
+      max-width: 400px;
+      letter-spacing: 1px;
+    }
+    input:focus, textarea:focus, select:focus, button:focus {
+      outline: none;
+      -webkit-box-shadow: 0px 0px 11px -7px #bac4bf;
+      -moz-box-shadow: 0px 0px 11px -7px #bac4bf;
+      box-shadow: 0px 0px 11px -7px #bac4bf;
+      border: solid 1px #d5e1db;
+    }
+    label {
+      margin-bottom: 0.5rem;
+    }
+    .section-header {
+      text-align: center;
+      margin: 0 auto;
+      margin-bottom: 50px;
+      font: 300 2rem 'Oswald', sans-serif;
+      letter-spacing: 6px;
+      margin-bottom: 25px;
+    }
+    .form-horizontal {
+      max-width: 450px;
+      font-weight: 400;
+    }
+    .send-button {
+      margin-top: 15px;
+      height: 34px;
+      width: 400px;
+      background-color: #d5e1db;
+      border: none;
+      border-radius: 7px;
+      letter-spacing: 2px;
+    }
+    .send-button:hover {
+      cursor: pointer;
+      color: white;
+      background-color: #bac4bf;
+    }
+    .advert-wrapper {
+      color: grey;
+      font-size: 0.8rem;
+      margin-top: 2rem;
+    }
+
+a
+    {
+        width: 30px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        font-size: 20px;
+        color: #F5F5DC;
+        cursor: pointer;
+    }
+
+.footertitle{
+color: rgba(254, 219, 178, 1)
+}
