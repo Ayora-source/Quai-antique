@@ -3,6 +3,26 @@ session_start();
 $adm = (isset($_SESSION['adm']))? intval($_SESSION['adm']) : 0; 
 $user = (isset($_SESSION['user']))? intval($_SESSION['user']) : 0; 
 
+
+if (getenv ('JAWSDB_URL') !== false){
+    $dbparts = parse_url(getenv('JAWSDB_URL'));
+
+        $hostname = $dbparts['host'];
+        $username = $dbparts['user'];
+        $password = $dbparts['pass'];
+        $database = ltrim($dbparts['path'],'/');
+
+        // Create connection
+        $connect = mysqli_connect($hostname, $username, $password, $database);
+
+        // Check connection
+        if (!$connect) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+        echo "Connection was successfully established!";
+}
+
+else{
 // Identification information
 define("DB_SERVER", "localhost");
 define("DB_USERNAME", "root");
@@ -33,5 +53,5 @@ function Exrequete ($connect, $requete) {
         exit();     
     }   
 } 
-
+}
 ?>
