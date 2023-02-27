@@ -51,7 +51,7 @@ require ("config2.php");
           // Loop that displays the results of the query
             while ($row = mysqli_fetch_assoc($result)) {?>  
 
-          <div class="col-md-4" >
+          <div class="col-lg-4" >
         
             <p  style="text-align: center; padding: 40px"><?php echo $row['name'] ?></p>
             <img width="400" height="400" style="padding: 40px;" src="admin/<?php echo $row['file'] ?>" alt="Image 1">  
