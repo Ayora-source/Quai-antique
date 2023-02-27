@@ -37,7 +37,7 @@ $connect = mysqli_connect(DB_SERVER , DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 if($connect === false){
     die("ERREUR : Impossible de se connecter. " . mysqli_connect_error());
 }
-
+}
 
 function Exrequete ($connect, $requete) {     
     $res = mysqli_query($connect, $requete);      
@@ -53,5 +53,5 @@ function Exrequete ($connect, $requete) {
         exit();     
     }   
 } 
-}
+
 ?>
