@@ -7,10 +7,10 @@ $user = (isset($_SESSION['user']))? intval($_SESSION['user']) : 0;
 if (getenv ('JAWSDB_URL') !== false){
     $dbparts = parse_url(getenv('JAWSDB_URL'));
 
-        $hostname = $dbparts['host'];
-        $username = $dbparts['user'];
-        $password = $dbparts['pass'];
-        $database = ltrim($dbparts['path'],'/');
+        $hostname = $dbparts['tvcpw8tpu4jvgnnq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'];
+        $username = $dbparts['fie6e27z8e3o8k98'];
+        $password = $dbparts['ehuh1crgsoxvjd1i'];
+        $database = ltrim($dbparts['mxvqbugs5bs9c5jb'],'/');
 
         // Create connection
         $connect = mysqli_connect($hostname, $username, $password, $database);
