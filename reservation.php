@@ -72,7 +72,7 @@ require ("config2.php");
     ?>
     <div class="contact-wrapper">  
       <form method="post" >
-        <h1 class="section-header" style="text-align: center;">Réserver votre table!</h1>
+        <h1 class="section-header" style="text-align: center;">Réservez votre table!</h1>
         <div>
           <label for="tel">Téléphone :</label>
           <input type="text" id="tel" name="tel" required>

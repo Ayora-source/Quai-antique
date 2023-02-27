@@ -7,7 +7,7 @@
       <div class="row mt-4">
         <!--Grid column-->
         <div class="col-lg-4 col-md-12 mb-4 mb-md-0"  style="text-align: center;">
-          <h4 class="text-uppercase mb-4" style="color: rgba(254, 219, 178, 1)">Horraire D'ouverture</h4>
+          <h4 class="text-uppercase mb-4" style="color: rgba(254, 219, 178, 1)">Horaire D'ouverture</h4>
            <?php
                 $query = "SELECT * FROM schedule";
                 //Execute the request 

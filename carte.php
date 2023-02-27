@@ -58,7 +58,7 @@ require('config2.php');
 
             // Display the desserts
              mysqli_data_seek($result, 0); // Rewind the result set to the beginning
-              echo "<H1 style=\"font-weight: bold;\" >Déssert</H1>";
+              echo "<H1 style=\"font-weight: bold;\" >Dessert</H1>";
                 while ($row = mysqli_fetch_assoc($result)) {
                   if ($row['id_type'] == 3) {
                     echo "<div class='element-item'>";
