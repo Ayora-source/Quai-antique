@@ -1,16 +1,4 @@
-  
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="../../style.css" />
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  </head>
-
-    <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="float: left;" style="width: 480px;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="float: left;" style="width: 480px;">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
       <svg class="bi pe-none me-2" width="40" height="72"><use xlink:href="#bootstrap"/></svg>
       <span class="fs-4">Super-admin</span>

@@ -1,4 +1,0 @@
-erreur 2023-02-21 08:55 /Restaurent ecf/admin/menu.php SELECT card.id, type, titre, descriptif, prix FROM card
-            INNER join type ON type.id=id_type
-            ORDER BY id_type  Unknown column 'titre' in 'field list'
-erreur 2023-02-21 09:26 /Restaurent ecf/admin/reservation.php SELECT * FROM convive Table 'registration.convive' doesn't exist
