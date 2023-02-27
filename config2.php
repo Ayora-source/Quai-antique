@@ -19,8 +19,6 @@ if (getenv ('JAWSDB_URL') !== false){
         if (!$connect) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        echo "Connection was successfully established!";
-}
 
 else{
 // Identification information
