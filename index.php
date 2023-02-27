@@ -60,7 +60,7 @@ require ("config2.php");
         </div>
       </div>
     </div>
-  </section>
+  </section><br>
 
   <footer>
    <?php include 'footer.php'?>
