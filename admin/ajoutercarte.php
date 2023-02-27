@@ -12,16 +12,16 @@ require ("../config2.php");
     //Execute the request 
     $result = Exrequete($connect, $sql);
     $row = mysqli_fetch_assoc($result);
-    //recover: id_type, title, description, prix 
-    if (isset($_REQUEST['id_type'], $_REQUEST['title'], $_REQUEST['description'], $_REQUEST['prix'])){
+    //recover: id_type, title, description, price 
+    if (isset($_REQUEST['id_type'], $_REQUEST['title'], $_REQUEST['description'], $_REQUEST['price'])){
     $title = stripslashes($_REQUEST['title']);
     $description = stripslashes($_REQUEST['description']);
     $type = stripslashes($_REQUEST['id_type']);
-    $prix = stripslashes($_REQUEST['prix']);
+    $price = stripslashes($_REQUEST['price']);
  
     //insert the elements in the database   
-    $query = "INSERT into `card` (id_type, title, description, prix)
-              VALUES ( '$type', '$title', '$description', '$prix')";
+    $query = "INSERT into `card` (id_type, title, description, price)
+              VALUES ( '$type', '$title', '$description', '$price')";
     $res = Exrequete($connect, $query);
       if($res){
          echo "<div class='sucess'>
