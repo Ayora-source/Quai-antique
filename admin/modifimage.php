@@ -25,10 +25,11 @@ if (isset($_POST['modifier'])) {
     } else {
       echo "Error: " . $query . "<br>" . mysqli_error($connect);
     }
+  }
   } else {
     echo "Le fichier n'est pas un fichier téléchargé.";
   }
-}
+
 //select the delete button
 if (isset($_POST['supprimer'])) {
   // Retrieve the data from the form
