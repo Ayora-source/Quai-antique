@@ -160,6 +160,7 @@ h3 {
     }
     label {
       margin-bottom: 0.5rem;
+      display: block;
     }
     .section-header {
       text-align: center;
