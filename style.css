@@ -14,11 +14,6 @@ p {
   font-size: 24px;
 }
 
-.header {
-  vertical-align: inherit;
-  color: rgba(253, 189, 113, 1);
-  font-weight: bolder;
-}
 .banner1 {
   position: relative;
   height: 500px; /* Modifier la hauteur en fonction de vos besoins */
@@ -194,17 +189,17 @@ h3 {
       margin-top: 2rem;
     }
 
-a
-    {
-        width: 30px;
+.header{
         justify-content: center;
         align-items: center;
-        margin: 0 auto;
+        margin-right: 50px;
         font-size: 20px;
-        color: #F5F5DC;
+        color: rgba(253, 189, 113, 1);
         cursor: pointer;
+        font-weight: bolder;
     }
 
 .footertitle{
 color: rgba(254, 219, 178, 1)
 }
+
