@@ -5,6 +5,7 @@ require('config2.php');
 <html lang="fr"> 
   <head>
     <title>Carte Quai antique</title>
+    <meta charset="utf-8">
     <?php include 'head.php'?>
   </head>
 <body>
@@ -33,7 +34,7 @@ require('config2.php');
               while ($row = mysqli_fetch_assoc($result)) {
                  if ($row['id_type'] == 1) {
                   echo "<div class='element-item'>";
-                  echo "<p style=\"text-align: center; font-weight: bold; \">" . $row["title"] . ", " . $row["price"] . "</p>";
+                  echo "<p style=\"text-align: center; font-weight: bold; \">" . $row["title"] . "- " . $row["price"] . "</p>";
                   echo "<p style=\"text-align: center\">" . $row["description"] . "</p><br>";
                   echo "</div>";
                  }
@@ -45,7 +46,7 @@ require('config2.php');
                 while ($row = mysqli_fetch_assoc($result)) {
                  if ($row['id_type'] == 2) {
                   echo "<div class='element-item'>";
-                  echo "<p style=\"text-align: center; font-weight: bold; \">" . $row["title"] . ", " . $row["price"] . "";
+                  echo "<p style=\"text-align: center; font-weight: bold; \">" . $row["title"] . "- " . $row["price"] . "";
                   echo "<p style=\"text-align: center\">" . $row["description"] . "</p><br>";
                   echo "</div>";
                  }
@@ -53,11 +54,11 @@ require('config2.php');
 
             // Display the desserts
              mysqli_data_seek($result, 0); // Rewind the result set to the beginning
-              echo "<H1 style=\"font-weight: bold;\" >Dessert</H1>";
+              echo "<H1 style=\"font-weight: bold;\" >Déssert</H1>";
                 while ($row = mysqli_fetch_assoc($result)) {
                   if ($row['id_type'] == 3) {
                     echo "<div class='element-item'>";
-                    echo "<p style=\"text-align: center; font-weight: bold; \">" . $row["title"] . ", " . $row["price"] . "<br>";
+                    echo "<p style=\"text-align: center; font-weight: bold; \">" . $row["title"] . "-" . $row["price"] . "<br>";
                     echo "<p style=\"text-align: center\">" . $row["description"] . "</p><br>";
                     echo "</div>";
                   }
@@ -76,7 +77,7 @@ require('config2.php');
                 // Loop that displays the results of the query
                   while ($row = mysqli_fetch_assoc($result1)) {
                     echo "<div class='element-item'>";
-                    echo "<h1 style=\"text-align: center\">Formule &nbsp; " . $row["type"] . "</h1>";
+                    echo "<h1 style=\"text-align: center\">" . $row["type"] . "</h1>";
                     echo "<p style=\"text-align: center\">" . $row["starter"] . " + " . $row["main"] . " + " . $row["dessert"] . "</p>";
                     echo "<p style=\"text-align: center\">" . $row["price"] . "</p>";
                     echo "</div>";
@@ -85,7 +86,8 @@ require('config2.php');
         </div>
       </div>
     </div>
-   </section>
+   </section><br>
+   <a class="btn btn-dark"  href="reservation.php" style="display: block; margin-right:40%; margin-left: 40%" role="button">Réserver une table</a><br><br>
   <footer>
        <?php include 'footer.php'?>
   </footer>     

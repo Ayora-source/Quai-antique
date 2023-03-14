@@ -20,7 +20,7 @@ require ("config2.php");
   <section style="background: rgba(254, 219, 178, 1) ;"><br><br> 
     <h2 style="text-align: center; color: white; font-weight: bold;">Le Restaurant "Quai Antique"</h2>
       <div class="container">
-        <p style="padding: 30px;">Le Chef Arnaud Michant aime passionnément les produits - et producteurs - de la Savoie.
+        <p style="padding: 30px;">Le Chef Arnaud Michant aime passionnément les produits et producteurs  de la Savoie.
         C’est pourquoi il a décidé d’ouvrir son troisième restaurant dans ce département.
         Le Quai Antique sera installé à Chambéry et proposera au déjeuner comme au dîner une
         expérience gastronomique, à travers une cuisine sans artifice.
@@ -42,20 +42,20 @@ require ("config2.php");
       <div class="container">
         <div class="row"> 
           <?php
-
           // Loop that displays the results of the query
-            while ($row = mysqli_fetch_assoc($result)) {?>  
+           while ($row = mysqli_fetch_assoc($result)) {?>  
 
           <div class="col-lg-4" >
         
             <p  style="text-align: center; padding: 40px"><?php echo $row['name'] ?></p>
-            <img style="display: block; margin: auto;" width="400" height="400" style="padding: 40px;" src="admin/<?php echo $row['file'] ?>" alt="Image 1">  
+            <img style="display: block; margin: auto;"  width="400" height="400" style="padding: 40px;" src="img/<?php echo $row['file'] ?>" alt="Image 1">  
           </div>        
           <?php } ?>
         </div>
       </div>
     </div>
   </section><br>
+<a class="btn btn-dark"  href="reservation.php" style="display: block; margin-right:35%; margin-left: 35%" role="button">Réserver une table</a><br><br>
 
   <footer>
    <?php include 'footer.php'?>

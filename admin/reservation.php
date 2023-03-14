@@ -15,9 +15,8 @@ require ("../config2.php");
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
- 
   </head>
   <body>
     <div>
@@ -27,7 +26,7 @@ require ("../config2.php");
         $sql = "SELECT * FROM guest";
         $resultat = Exrequete($connect, $sql);
         while ($row = mysqli_fetch_assoc($resultat)) { ?>  
-    <section style="margin-left: 200px;">
+    <section>
         <p> Rentrer le nombre de convive que peux accueillir le restaurent par tranche de 15 minutes</p>
         <form  action="modifconvive.php" method="post">
         <input type="text" name="guest" value="<?php echo $row['guest'] ; ?>">        
@@ -37,6 +36,7 @@ require ("../config2.php");
       </section>
 
             <section>
+              <h2 style="text-align:center;">Table des réservations</h2>
               <div class="box-body table-responsive no-padding">
                 <table  class="display table table-striped" style="font-size:12px;" id="table_inscrits" cellspacing="0" width="100%">
                   <thead>
@@ -52,7 +52,7 @@ require ("../config2.php");
                   </thead>
                   <tbody> 
                   <?php
-                    $sql = "SELECT * FROM reservation";
+                    $sql = "SELECT * FROM reservation WHERE date >= date(NOW()) ORDER BY date ASC";
                     $resultat = Exrequete($connect, $sql);
                    while ($row = mysqli_fetch_assoc($resultat)) { ?>       
                        <tr>                   

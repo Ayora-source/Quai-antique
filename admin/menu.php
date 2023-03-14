@@ -18,69 +18,17 @@
 <html lang="fr"> 
   <head>
     <title>Quai Antique</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <?php include 'head.php' ?>
   </head>
-  <body>
+  <body >
     <div>
     <?php include 'header-admin.php' ?>
-    </div>
+  </div>
 
-  <h1>Espace d'administration</h1><br>
-
-  <!-- section displaying the card : starters, main and desserts -->
-  <section style="margin-left: 200px;">
-    <h2>Modification de la carte</h2>
-      <form action="modifcarte.php" method="post">
-        <?php 
-          $i = 0;
-          echo "<H1 style=\"font-weight: bold;\" >Entrée</H1>";
-          // Loop that displays the results of the query
-           while ($row = mysqli_fetch_assoc($result)){ 
-            if ($row['id_type'] == 1) {?>
-            <input type="checkbox" name="delete[<?php echo $i; ?>]" value="<?php echo $row['id']; ?>">
-            <input type="text" name="title[<?php echo $i; ?>]" value="<?php echo $row['title'] ; ?>">
-            <input type="text" name="description[<?php echo $i; ?>]" value="<?php echo $row['description'] ; ?>">
-            <input type="text" name="price[<?php echo $i; ?>]" value="<?php echo $row['price']; ?>">
-            <input type="hidden" name="id[<?php echo $i; ?>]" value="<?php echo $row['id']; ?>">
-            <br><br>
-            <?php $i++; } }
-             mysqli_data_seek($result, 0); // Rewind the result set to the beginning
-              echo "<H1 style=\"font-weight: bold;\" >Plats</H1>";
-             while ($row = mysqli_fetch_assoc($result)){ 
-              if ($row['id_type'] == 2) {?>
-            <input type="checkbox" name="delete[<?php echo $i; ?>]" value="<?php echo $row['id']; ?>">
-            <input type="text" name="title[<?php echo $i; ?>]" value="<?php echo $row['title'] ; ?>">
-            <input type="text" name="description[<?php echo $i; ?>]" value="<?php echo $row['description'] ; ?>">
-            <input type="text" name="price[<?php echo $i; ?>]" value="<?php echo $row['price']; ?>">
-            <input type="hidden" name="id[<?php echo $i; ?>]" value="<?php echo $row['id']; ?>">
-            <br><br>
-            <?php $i++; }}
-            mysqli_data_seek($result, 0); // Rewind the result set to the beginning
-              echo "<H1 style=\"font-weight: bold;\" >Déssert</H1>";
-            while ($row = mysqli_fetch_assoc($result)){ 
-              if ($row['id_type'] == 3) {?>
-            <input type="checkbox" name="delete[<?php echo $i; ?>]" value="<?php echo $row['id']; ?>">
-            <input type="text" name="title[<?php echo $i; ?>]" value="<?php echo $row['title'] ; ?>">
-            <input type="text" name="description[<?php echo $i; ?>]" value="<?php echo $row['description'] ; ?>">
-            <input type="text" name="price[<?php echo $i; ?>]" value="<?php echo $row['price']; ?>">
-            <input type="hidden" name="id[<?php echo $i; ?>]" value="<?php echo $row['id']; ?>">
-            <br><br>
-            <?php $i++;}}
-          
-        ?>
-          <button type="submit" name="modifier">Modifier</button>
-          <button type="submit" name="supprimer">Supprimer</button>
-          </form><br><br>
-  </section>
  
  <!-- add an item to the card -->
-  <section style="margin-left: 200px;">
-    <h2>Ajouter une Entrée, un plats ou un dessert</h2>
+  <section>
+    <h2 style="text-align:center;">Ajouter une Entrée, un plats ou un dessert</h2>
        <form  action="ajoutercarte.php"  method="post">
            <select id="id_type" name="id_type">
              <option value="1">Entrée</option>
@@ -95,8 +43,8 @@
   </section>
 
 <!-- section displaying the menu : starters, main and desserts -->
-<section style="margin-left: 200px;">
-  <h2>Modification du menu</h2>
+<section>
+  <h2 style="text-align:center;">Modification du menu</h2>
   <form action="modifmenu.php" method="post">
         <select id="element_id" name="element_id">
         <option value="1">Formule Déjeuner</option>
@@ -107,7 +55,97 @@
     <input type="text" name="element_dessert" placeholder="dessert">
     <input type="text" name="element_prix" placeholder="prix">
     <button type="submit"> Modifier</button>
-  </form>
-</section>  
+  </form><br><br>
+</section> 
+
+  <!-- section displaying the card : starters, main and desserts -->
+  <section>
+    <h2 style="text-align:center;">Modification de la carte</h2>
+        <?php 
+          $i = 0;
+          echo "<H3 style=\"font-weight: bold;\" >Entrée</H3>"; ?>
+          <form action="modifcarte.php" method="post">
+           <table class="table caption-top">
+            <thead>
+              <tr>
+                <th scope="col">checkbox</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Description</th>
+                <th scope="col">prix</th>
+             </tr>
+          </thead>
+           <tbody>
+          
+            <?php 
+              // Loop that displays the results of the query
+               while ($row = mysqli_fetch_assoc($result)){ 
+                if ($row['id_type'] == 1) {?>
+                  <tr>
+                    <td><input type="checkbox" name="delete[<?php echo $i; ?>]" value="<?php echo $row['id']; ?>"></td>
+                    <td><input type="text" style="width:100%" name="title[<?php echo $i; ?>]" value="<?php echo $row['title'] ; ?>"></td>
+                    <td><input type="text" style="width:100%" name="description[<?php echo $i; ?>]" value="<?php echo $row['description'] ; ?>"></td>
+                    <td><input type="text" style="width:100%" name="price[<?php echo $i; ?>]" value="<?php echo $row['price']; ?>"></td>
+                    <td><input type="hidden" name="id[<?php echo $i; ?>]" value="<?php echo $row['id']; ?>"></td>
+                  </tr>
+                  </div>
+                <?php $i++; } }?>                                
+          </tbody>
+        </table>
+        <table class="table caption-top">
+            <thead>
+              <tr>
+                <th scope="col">checkbox</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Description</th>
+                <th scope="col">prix</th>
+             </tr>
+            </thead>
+            <tbody>
+              <?php   
+                mysqli_data_seek($result, 0); // Rewind the result set to the beginning
+                echo "<H3 style=\"font-weight: bold;\" >Plats</H3>";
+                 while ($row = mysqli_fetch_assoc($result)){ 
+                  if ($row['id_type'] == 2) {?>
+                    <tr>
+                      <td><input type="checkbox" name="delete[<?php echo $i; ?>]" value="<?php echo $row['id']; ?>"></td>
+                      <td><input type="text" style="width:100%" name="title[<?php echo $i; ?>]" value="<?php echo $row['title'] ; ?>"></td>
+                      <td><input type="text" style="width:100%" name="description[<?php echo $i; ?>]" value="<?php echo $row['description'] ; ?>"></td>
+                      <td><input type="text" style="width:100%" name="price[<?php echo $i; ?>]" value="<?php echo $row['price']; ?>"></td>
+                      <td><input type="hidden" name="id[<?php echo $i; ?>]" value="<?php echo $row['id']; ?>"></td>
+                    </tr>
+                <?php $i++; } }?> 
+            </tbody>                               
+        </table>
+        <table class="table caption-top">
+            <thead>
+              <tr>
+                <th scope="col">checkbox</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Description</th>
+                <th scope="col">prix</th>
+             </tr>
+          </thead>
+          <tbody>         
+         <?php  
+            mysqli_data_seek($result, 0); // Rewind the result set to the beginning
+              echo "<H3 style=\"font-weight: bold;\" >Déssert</H3>";
+            while ($row = mysqli_fetch_assoc($result)){ 
+              if ($row['id_type'] == 3) {?>
+                <tr>   
+                  <td><input type="checkbox" style="width:100%" name="delete[<?php echo $i; ?>]" value="<?php echo $row['id']; ?>"></td>
+                  <td><input type="text" style="width:100%" name="title[<?php echo $i; ?>]" value="<?php echo $row['title'] ; ?>"></td>
+                  <td><input type="text" style="width:100%" name="description[<?php echo $i; ?>]" value="<?php echo $row['description'] ; ?>"></td>
+                  <td><input type="text" style="width:100%" name="price[<?php echo $i; ?>]" value="<?php echo $row['price']; ?>"></td>
+                  <td><input type="hidden" name="id[<?php echo $i; ?>]" value="<?php echo $row['id']; ?>"></td>
+                </tr>
+            <?php $i++; } }?> 
+          </tbody>                               
+        </table>
+
+          <button type="submit" name="modifier">Modifier</button>
+          <button type="submit" name="supprimer">Supprimer</button>
+          </form><br><br>
+  </section>
+ 
 </body>
 </html>

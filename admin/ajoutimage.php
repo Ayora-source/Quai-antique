@@ -1,5 +1,5 @@
 <?php
-  require ("../config2.php");
+  require ("../../config1.php");
   // Initialize the session
   // Check if the user is logged in, otherwise redirect them to the login page.
     if(!isset($_SESSION["admin"])){
@@ -14,12 +14,12 @@
     $file = $_FILES['file']['name'];
     $file_tmp = $_FILES['file']['tmp_name'];
     //The path where the file will be saved
-    $destination = "foto/".$file;
+    $destination = "../img/".$file; 
     //insert the file in the foto folder
     move_uploaded_file($file_tmp, $destination);
     
     //insert the elements in the database 
-    $query = "INSERT INTO photos (name, file) VALUES ('$name', '$destination')";
+    $query = "INSERT INTO photos (name, file) VALUES ('$name', '$file')";
     if (mysqli_query($connect, $query)) {
       echo "L'élément a été modifié avec succès.<br>";
     } 

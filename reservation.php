@@ -6,6 +6,7 @@ require ("config2.php");
   <head>
     <title>Quai Antique</title>
     <?php include 'head.php'?>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <div>
@@ -17,6 +18,7 @@ require ("config2.php");
         </div>
       </div>
     </div>  
+
   <section style="background: white;"><br><br> 
     <?php
         if (isset($_REQUEST['tel'], $_REQUEST['username'], $_REQUEST['firstname'], $_REQUEST['covers'], $_REQUEST['allergy'], $_REQUEST['date'], $_REQUEST['time'])){
@@ -61,69 +63,32 @@ require ("config2.php");
               }
             }
         else {
-         echo "<p style=\"text-align: center; font-weight: bold;\">Le restaurant peux acceuillir que ".$rown['guest']." personnes par crénaux, vous pouvez toujours nous contacter au 06000000</p>"; 
+         echo "<p style=\"text-align: center; font-weight: bold;\">Le restaurant peut accueillir que ".$rown['guest']." personnes par créneau, vous pouvez toujours nous contacter au 06000000</p>"; 
         }
        } 
     ?>
     <div class="contact-wrapper">  
-      <form method="post" >
+      <form class="form-horizontal" method="post" id="reservation-form">
         <h1 class="section-header" style="text-align: center;">Réservez votre table!</h1>
-        <div>
-          <label for="tel">Téléphone :</label>
-          <input type="text" id="tel" name="tel" required>
-        </div>          
+
+          
           <?php 
           //If a session has been opened
           if (session_status() == PHP_SESSION_ACTIVE && isset($_SESSION['user'])) {
             // SQL query to select all rows of the table
             $sql = "SELECT * FROM users WHERE id = '" . $_SESSION['user'] . "'";
-            //Execute the request 
+            //Execute the request
             $result = Exrequete($connect, $sql);
             // Loop that displays the results of the query 
             while ($row = mysqli_fetch_assoc($result)) { ?>
-              <div>       
-                <label for="username">Prénom</label>
-                <input type="text" id="username" name="username" value="<?php echo $row['username'] ; ?>" required>
-              </div>
-              <div>       
-                <label for="firstname">Nom</label>
-                <input type="text" id="firstname" name="firstname" value="<?php echo $row['firstname'] ; ?>" required>
-              </div>
-              <div>       
+               <div>       
                 <label for="covers">Nombre de couverts :</label>
                 <input type="number" id="covers" name="covers" value="<?php echo $row['covers'] ; ?>" required>
               </div>
+              <div>
               <div> 
-                <label for="allergy">Allergies :</label>
-                <input type="text" id="allergy" name="allergy" value="<?php echo $row['allergy'] ; ?>">
-
-          <?php 
-            } 
-          }
-          else { ?>
-
-            <div>       
-              <label for="username">Prénom</label>
-              <input type="text" id="username" name="username" required>
-            </div>
-             <div>       
-              <label for="firstname">Nom</label>
-              <input type="text" id="firstname" name="firstname" required>
-            </div>
-            <div>       
-              <label for="covers">Nombre de couverts :</label>
-              <input type="number" id="covers" name="covers"  required>
-            </div>
-            <div> 
-              <label for="allergy">Allergies :</label>
-              <input type="text" id="allergy" name="allergy" >
-
-          <?php }?>
-       
-            </div>
-            <div> 
               <label for="Date">Date :</label>
-              <input type="Date" id="date" name="date" > 
+              <input type="Date" id="date" name="date" required> 
             </div> 
             <div>
               <label for="time">Heure :</label>
@@ -132,19 +97,133 @@ require ("config2.php");
                 <option value="12:15">12:15</option>
                 <option value="12:30">12:30</option>
                 <option value="12:45">12:45</option>
-                <option value="12:00">13:00</option>
+                <option value="13:00">13:00</option>
                 <option value="13:15">13:15</option>
                 <option value="13:30">13:30</option>
                 <option value="13:45">13:45</option>
                 <option value="14:00">14:00</option>
                 <option value="14:15">14:15</option>
                 <option value="14:30">14:30</option>
+                <option value="19:00">19:00</option>
+                <option value="19:15">19:15</option>
+                <option value="19:30">19:30</option>
+                <option value="19:45">19:45</option>
+                <option value="20:00">20:00</option>
+                <option value="20:15">20:15</option>
+                <option value="20:30">20:30</option>
+                <option value="20:45">20:45</option>
+                <option value="21:00">21:00</option>
+                <option value="21:15">21:15</option>
+                <option value="21:30">21:30</option>
+                <option value="21:45">21:45</option>
+                <option value="22:00">22:00</option>
               </select>
-            </div>         
-              <input type="submit" name="submit" value="reserver" class="box-button" />
+            </div> 
+            <p id="availability"></p>  
+            <div>   
+                <label for="username">Prénom :</label>
+                <input type="text" id="username" name="username" value="<?php echo $row['username'] ; ?>" required>
+              </div>
+              <div>       
+                <label for="firstname">Nom :</label>
+                <input type="text" id="firstname" name="firstname" value="<?php echo $row['firstname'] ; ?>" required>
+              </div>
+              <div> 
+                <label for="allergy">Allergies :</label>
+                <input type="text" id="allergy" name="allergy" value="<?php echo $row['allergy'] ; ?>">
+             </div>  
+          <?php 
+            } 
+          }
+          else { ?>
+             <div>       
+              <label for="covers">Nombre de couverts :</label>
+              <input type="number" id="covers" name="covers"  required>
             </div>
+            <div> 
+              <label for="Date">Date :</label>
+              <input type="Date" id="date" name="date" required> 
+            </div> 
+            <div>
+              <label for="time">Heure :</label>
+              <select id="time" name="time" required>
+                <option value="12:00">12:00</option>
+                <option value="12:15">12:15</option>
+                <option value="12:30">12:30</option>
+                <option value="12:45">12:45</option>
+                <option value="13:00">13:00</option>
+                <option value="13:15">13:15</option>
+                <option value="13:30">13:30</option>
+                <option value="13:45">13:45</option>
+                <option value="14:00">14:00</option>
+                <option value="14:15">14:15</option>
+                <option value="14:30">14:30</option>
+                <option value="19:00">19:00</option>
+                <option value="19:15">19:15</option>
+                <option value="19:30">19:30</option>
+                <option value="19:45">19:45</option>
+                <option value="20:00">20:00</option>
+                <option value="20:15">20:15</option>
+                <option value="20:30">20:30</option>
+                <option value="20:45">20:45</option>
+                <option value="21:00">21:00</option>
+                <option value="21:15">21:15</option>
+                <option value="21:30">21:30</option>
+                <option value="21:45">21:45</option>
+                <option value="22:00">22:00</option>
+              </select>
+            </div>
+            <p id="availability"></p>  
+            <div>       
+              <label for="username">Prénom</label>
+              <input type="text" id="username" name="username" required>
+            </div>
+             <div>       
+              <label for="firstname">Nom</label>
+              <input type="text" id="firstname" name="firstname" required>
+            </div>
+            <div> 
+              <label for="allergy">Allergies :</label>
+              <input type="text" id="allergy" name="allergy">
+            </div>
+          <?php }?>
+            <div>
+              <label for="tel">Téléphone :</label>
+              <input type="text" class="box-input" id="tel" name="tel" required>
+            </div>       
+          <div> 
+              <input type="submit" id="submit" name="submit" value="reserver" class="box-button"/>
+              </div>    
           </form>
-         </div> 
+         </div>
+       </form>
+     </div>
+   </section>
+<script>
+$(document).ready(function() {
+  // Événement "change" pour les champs Covers, Date et Time
+  $('#date, #time, #covers').on('change', function() {
+    // Vérification si les champs ont tous été remplis
+    if ($('#date').val() && $('#time').val() && $('#covers').val()) {
+      // Récupération des valeurs des champs
+      var date = $('#date').val();
+      var time = $('#time').val();
+      var covers = $('#covers').val();
+
+      // Envoi de la requête AJAX au serveur
+      $.ajax({
+        url: 'get_reservation.php', // chemin vers le script PHP qui traite la requête
+        method: 'POST',
+        data: { date: date, time: time, covers: covers }, // données à envoyer au serveur
+        success: function(response) {
+          // Affichage de la réponse du serveur dans l'élément avec l'ID "availability"
+          $('#availability').html(response);
+        }
+      });
+    }
+  });
+});
+</script>
     <?php include 'footer.php'?>
   </body>
 </html>

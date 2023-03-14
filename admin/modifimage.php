@@ -15,11 +15,11 @@ if (isset($_POST['modifier'])) {
   $file_tmp = $_FILES['file']['tmp_name'];
   if (is_uploaded_file($file_tmp)) {
     $file = $_FILES['file']['name'];
-    $destination = "foto/".$file;
+    $destination = "../img/".$file;
     move_uploaded_file($file_tmp, $destination);
 
     // Update the data in the database
-    $query = "UPDATE photos SET file = '".mysqli_real_escape_string($connect, $destination)."', name = '".mysqli_real_escape_string($connect, $name)."' WHERE id = '".mysqli_real_escape_string($connect, $id)."'";
+    $query = "UPDATE photos SET file = '".mysqli_real_escape_string($connect, $file)."', name = '".mysqli_real_escape_string($connect, $name)."' WHERE id = '".mysqli_real_escape_string($connect, $id)."'";
     if (mysqli_query($connect, $query)) {
       echo "L'élément a été modifié avec succès.<br>";
     } else {

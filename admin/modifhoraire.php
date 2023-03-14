@@ -15,7 +15,7 @@ $opening_s = $_POST['opening_s'];
 $closure_s = $_POST['closure_s'];
 
 // Update the data in the database
-$sql = "UPDATE schedule SET  opening_m = '$opening_m', closure_m = '$closure_m', opening_s = '$opening_s', closure_s = '$closure_m'  WHERE id = '$element_id'";
+$sql = "UPDATE schedule SET  opening_m = '$opening_m', closure_m = '$closure_m', opening_s = '$opening_s', closure_s = '$closure_s'  WHERE id = '$element_id'";
 
 if (mysqli_query($connect, $sql)) {
     echo "L'élément a été modifié avec succès.";
