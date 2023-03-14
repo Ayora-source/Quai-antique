@@ -1,4 +1,6 @@
-Voici les étapes à suivre pour exécuter une application en local avec MAMP :
+-Télécharger le dossier zip via Gitub
+
+-Voici les étapes à suivre pour exécuter une application en local avec MAMP :
 
 	1-Télécharger et installer MAMP sur votre ordinateur en fonction de votre système d'exploitation depuis le site officiel : https://www.mamp.info/en/downloads/.
 
@@ -10,13 +12,13 @@ Voici les étapes à suivre pour exécuter une application en local avec MAMP :
 
 	5-Cliquez sur  Tools -> phpMyAdmin
 
-	6- Cliquez sur "Nouvelle base de données" dans le panneau de gauche pour créer une nouvelle base de données pour votre application. Donnez un nom à votre base de données.
+	6- Cliquez sur "Nouvelle base de données" dans le panneau de gauche pour créer une nouvelle base de données pour votre application. Nommez votre base de données registration.
 
-	7-Vous pouvez importer votre base de données existante en cliquant sur "Importer". Sélectionnez le fichier sql fournis cliquez sur le bouton "Exécuter" pour importer la base de données.
+	7-Vous pouvez importer le fichier registration.sql en cliquant sur "Importer". Sélectionnez le fichier sql fournis cliquez sur le bouton "Exécuter" pour importer la base de données.
 
 	8-En inserent se fichier un compte administrateur est crée email: ... mdp: ppm.
 
-	8- Sur la page d'acceuil Mamp vous avez les differents élement de connexion a la base de donnée, allez dans le fichier config2.php et modifier cette ligne avec les données fournit par votre mamp <?php $host = 'localhost'; $username = 'root'; $password = 'root'; $dbname = 'nom de la table'; $connect = mysqli_connect($host, $username, $password, $dbname);
+	8- Sur la page d'acceuil Mamp vous avez les differents élement de connexion a la base de donnée, allez dans le fichier config2.php et modifier cette ligne avec les données fournit par votre mamp <?php $host = 'localhost'; $username = 'root'; $password = 'root'; $dbname = 'nom de la table'; $connect = mysqli_connect($host, $username, $password, $dbname); "enregistrez"
 
     9- Retours sur la page d'acceuil Manp, cliquez sur My Website, votre nom d'application s'affiche, cliquez dessus pour l'executer en local
 
