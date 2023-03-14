@@ -50,10 +50,10 @@
         <option value="1">Formule Déjeuner</option>
         <option value="2">Formule Diner</option>
         </select><br><br>
-    <input type="text" name="element_entree" placeholder="Entrée">
-    <input type="text" name="element_plat" placeholder="plat">
-    <input type="text" name="element_dessert" placeholder="dessert">
-    <input type="text" name="element_prix" placeholder="prix">
+    <input type="text" name="starter" placeholder="Entrée">
+    <input type="text" name="main" placeholder="plat">
+    <input type="text" name="dessert" placeholder="dessert">
+    <input type="text" name="price" placeholder="prix">
     <button type="submit"> Modifier</button>
   </form><br><br>
 </section> 
