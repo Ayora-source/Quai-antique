@@ -13,6 +13,32 @@ p,label{
 p {
   font-size: 24px;
 }
+.navbar {
+  position: fixed; /* Fixe la position de la navbar */
+  top: 0; /* Place la navbar en haut de la page */
+  width: 100%; /* Définit la largeur de la navbar à 100% */
+  z-index: 999; /* Assure que la navbar sera au-dessus de tout autre élément */
+}
+.navbar {
+  position: fixed; /* Fixe la position de la navbar */
+  top: 0; /* Place la navbar en haut de la page */
+  width: 100%; /* Définit la largeur de la navbar à 100% */
+  z-index: 999; /* Assure que la navbar sera au-dessus de tout autre élément */
+}
+
+/* Applique une transition pour que la navbar descende en douceur */
+.navbar {
+  transition: top 0.3s ease-in-out;
+}
+
+/* Change la position de la navbar lors du défilement de la page */
+body {
+  padding-top: 100px; /* Décale le contenu de la page de la hauteur de la navbar */
+}
+
+body.scrolled .navbar {
+  top: -100px; /* Fait descendre la navbar lors du défilement */
+}
 
 .banner1 {
   position: relative;
