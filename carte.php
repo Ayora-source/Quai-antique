@@ -87,7 +87,7 @@ require('config2.php');
       </div>
     </div>
    </section><br>
-   <a class="btn btn-dark"  href="reservation.php" style="display: block; margin-right:40%; margin-left: 40%" role="button">Réserver une table</a><br><br>
+   <a class="btn btn-dark"  href="reservation.php" style="display: block; margin-right:40%; margin-left: 40%" role="button">Réservez une table</a><br><br>
   <footer>
        <?php include 'footer.php'?>
   </footer>     
