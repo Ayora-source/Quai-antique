@@ -19,12 +19,6 @@ p {
   width: 100%; /* Définit la largeur de la navbar à 100% */
   z-index: 999; /* Assure que la navbar sera au-dessus de tout autre élément */
 }
-.navbar {
-  position: fixed; /* Fixe la position de la navbar */
-  top: 0; /* Place la navbar en haut de la page */
-  width: 100%; /* Définit la largeur de la navbar à 100% */
-  z-index: 999; /* Assure que la navbar sera au-dessus de tout autre élément */
-}
 
 /* Applique une transition pour que la navbar descende en douceur */
 .navbar {
