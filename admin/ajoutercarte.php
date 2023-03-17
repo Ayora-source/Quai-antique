@@ -15,7 +15,9 @@ require ("../config2.php");
     //recover: id_type, title, description, price 
     if (isset($_REQUEST['id_type'], $_REQUEST['title'], $_REQUEST['description'], $_REQUEST['price'])){
     $title = stripslashes($_REQUEST['title']);
+    $title = mysqli_real_escape_string($connect, $title);
     $description = stripslashes($_REQUEST['description']);
+    $description = mysqli_real_escape_string($connect, $description);
     $type = stripslashes($_REQUEST['id_type']);
     $price = stripslashes($_REQUEST['price']);
  

@@ -43,8 +43,7 @@
           $res = mysqli_query($connect, $query);
             if($res){
                echo "<div class='sucess'>
-                     <h3>Vous êtes inscrit avec succès.</h3>
-                     <p>Cliquez ici pour vous <a href='login.php'>connecter</a></p>
+                     <p><br>Vous êtes inscrit avec succès.<br>Cliquez ici pour vous<a href='login.php'>connecter</a></p>
                </div>";
             }
          }
