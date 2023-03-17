@@ -80,17 +80,11 @@ require ("config2.php");
             //Execute the request
             $result = Exrequete($connect, $sql);
             // Loop that displays the results of the query 
-            while ($row = mysqli_fetch_assoc($result)) { ?>
-               <div>       
+            while ($row = mysqli_fetch_assoc($result)) { ?>    
                 <label for="covers">Nombre de couverts :</label>
                 <input type="number" id="covers" name="covers" value="<?php echo $row['covers'] ; ?>" required>
-              </div>
-              <div>
-              <div> 
               <label for="Date">Date :</label>
               <input type="Date" id="date" name="date" required> 
-            </div> 
-            <div>
               <label for="time">Heure :</label>
               <select id="time" name="time" required>
                 <option value="12:00">12:00</option>
@@ -118,33 +112,21 @@ require ("config2.php");
                 <option value="21:45">21:45</option>
                 <option value="22:00">22:00</option>
               </select>
-            </div> 
-            <p id="availability"></p>  
-            <div>   
+            <p id="availability"></p>    
                 <label for="username">Prénom :</label>
-                <input type="text" id="username" name="username" value="<?php echo $row['username'] ; ?>" required>
-              </div>
-              <div>       
+                <input type="text" id="username" name="username" value="<?php echo $row['username'] ; ?>" required>     
                 <label for="firstname">Nom :</label>
                 <input type="text" id="firstname" name="firstname" value="<?php echo $row['firstname'] ; ?>" required>
-              </div>
-              <div> 
                 <label for="allergy">Allergies :</label>
-                <input type="text" id="allergy" name="allergy" value="<?php echo $row['allergy'] ; ?>">
-             </div>  
+                <input type="text" id="allergy" name="allergy" value="<?php echo $row['allergy'] ; ?>"> 
           <?php 
             } 
           }
-          else { ?>
-             <div>       
+          else { ?>   
               <label for="covers">Nombre de couverts :</label>
               <input type="number" id="covers" name="covers"  required>
-            </div>
-            <div> 
               <label for="Date">Date :</label>
               <input type="Date" id="date" name="date" required> 
-            </div> 
-            <div>
               <label for="time">Heure :</label>
               <select id="time" name="time" required>
                 <option value="12:00">12:00</option>
@@ -172,28 +154,17 @@ require ("config2.php");
                 <option value="21:45">21:45</option>
                 <option value="22:00">22:00</option>
               </select>
-            </div>
-            <p id="availability"></p>  
-            <div>       
+            <p id="availability"></p>      
               <label for="username">Prénom</label>
-              <input type="text" id="username" name="username" required>
-            </div>
-             <div>       
+              <input type="text" id="username" name="username" required>      
               <label for="firstname">Nom</label>
               <input type="text" id="firstname" name="firstname" required>
-            </div>
-            <div> 
               <label for="allergy">Allergies :</label>
               <input type="text" id="allergy" name="allergy">
-            </div>
           <?php }?>
-            <div>
               <label for="tel">Téléphone :</label>
               <input type="text" class="box-input" id="tel" name="tel" required>
-            </div>       
-          <div> 
-              <input type="submit" id="submit" name="submit" value="reserver" class="box-button"/>
-              </div>    
+              <input type="submit" id="submit" name="submit" value="reserver" class="box-button"/>  
           </form>
          </div>
        </form>

@@ -13,7 +13,7 @@ require('config2.php');
     <?php include 'header.php'?>
     <div class="banner2">
       <div class="banner-text">
-      <h1>Nos Menus</h1>
+      <h1>Notre Carte / Nos Menus</h1>
       </div>
     </div>
   </div> 
@@ -30,7 +30,7 @@ require('config2.php');
             $result = mysqli_query($connect, $sql);
 
             //Show entries
-            echo "<H1 style=\"font-weight: bold;\" >Entrée</H1>";
+            echo "<H1 style=\"font-weight: bold;\" >Entrées</H1>";
               while ($row = mysqli_fetch_assoc($result)) {
                  if ($row['id_type'] == 1) {
                   echo "<div class='element-item'>";
@@ -54,7 +54,7 @@ require('config2.php');
 
             // Display the desserts
              mysqli_data_seek($result, 0); // Rewind the result set to the beginning
-              echo "<H1 style=\"font-weight: bold;\" >Déssert</H1>";
+              echo "<H1 style=\"font-weight: bold;\" >Désserts</H1>";
                 while ($row = mysqli_fetch_assoc($result)) {
                   if ($row['id_type'] == 3) {
                     echo "<div class='element-item'>";

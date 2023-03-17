@@ -1,4 +1,4 @@
--Télécharger le dossier zip via Gitub
+-Téléchargez le dossier zip via Gitub
 
 -Voici les étapes à suivre pour exécuter une application en local avec MAMP :
 

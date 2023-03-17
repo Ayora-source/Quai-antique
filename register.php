@@ -60,12 +60,12 @@
           <input type="text" class="box-input" name="firstname"placeholder="Nom" required />
           
           <input type="text" class="box-input" name="email" placeholder="Email" required />
-
-          <input type="number" class="box-input" name="covers" placeholder="Nbr couverts" required />
           
           <input type="password" class="box-input" name="password" placeholder="Mot de passe" required />
 
           <input type="text" class="box-input" name="allergy" placeholder="renseignez vos allergies" />
+          
+          <input type="number" class="box-input" name="covers" placeholder="Nbr couverts par défaut" required />
           
           <input type="submit" name="submit" value="S'inscrire" class="box-button" />
           

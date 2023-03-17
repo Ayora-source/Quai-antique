@@ -12,7 +12,7 @@ require ("config2.php");
      <?php include 'header.php'?>
       <div class="banner1">
         <div class="banner-text">
-          <h1>Quai Antique</h1>
+          <h1><br><br>Quai Antique</h1>
           <p>Restaurant</p>
         </div>
       </div>
@@ -38,7 +38,7 @@ require ("config2.php");
         //Execute the request 
         $result = mysqli_query($connect, $query);
       ?>
-      <p style="text-align: center; color: rgba(254, 219, 178, 1); font-weight: bold;">Les plats Favorits du CHEF.</p>
+      <p style="text-align: center; color: rgba(254, 219, 178, 1); font-weight: bold;">Les plats Favoris du CHEF.</p>
       <div class="container">
         <div class="row"> 
           <?php
