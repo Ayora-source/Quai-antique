@@ -92,7 +92,7 @@ CREATE TABLE `users` (
   `allergy` varchar(500) CHARACTER SET utf8 NOT NULL,
   `type` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 INSERT INTO `users` (`id`, `username`, `firstname`, `email`, `covers`, `allergy`, `type`, `password`) VALUES
