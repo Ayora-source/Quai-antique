@@ -27,8 +27,8 @@ if ($total_reservations + $covers <= $row_guest['guest']) {
 
 // Afficher le résultat
 if ($disponible) {
-    echo "Table disponible pour la date $date et l'heure $time";
+    echo "<span style=\"color: green\";>Table disponible pour la date du $date à $time </span>";
 } else {
-    echo "Table indisponible pour la date $date et l'heure $time";
+    echo "<span style=\"color: red\";> Table indisponible pour la date du $date à $time </span>";
 }
 ?>

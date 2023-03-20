@@ -26,8 +26,6 @@ if (isset($_POST['modifier'])) {
       echo "Error: " . $query . "<br>" . mysqli_error($connect);
     }
   }
-  } else {
-    echo "Le fichier n'est pas un fichier téléchargé.";
   }
 
 //select the delete button
@@ -37,12 +35,10 @@ if (isset($_POST['supprimer'])) {
     //delete items in database
     $query = "DELETE FROM `photos` WHERE id= $id";
     if (mysqli_query($connect, $query)) {
-      echo "L'élément a été modifié avec succès.<br>";
+      echo "L'élémenta été supprimé.<br>";
     } else {
       echo "Error: " . $query . "<br>" . mysqli_error($connect);
     }
-  } else {
-    echo "Le fichier a été supprimé.";
   }
 
 mysqli_close($connect);

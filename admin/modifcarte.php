@@ -3,7 +3,7 @@
   // Initialize the session
   // Check if the user is logged in, otherwise redirect them to the login page.
     if(!isset($_SESSION["admin"])){
-     eader("Location: ../login.php");
+     header("Location: ../login.php");
       exit(); 
     }
 
@@ -17,6 +17,7 @@
 
     
     for ($i = 0; $i < count($id); $i++) {
+
     // Update the data in the database
     $sql = "UPDATE card SET  title = '" . $title[$i] . "', description = '" . $description[$i] . "', price = '" . $price[$i] . "' WHERE id = '" . $id[$i] . "'";
 

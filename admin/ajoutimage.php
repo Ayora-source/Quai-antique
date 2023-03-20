@@ -21,7 +21,7 @@
     //insert the elements in the database 
     $query = "INSERT INTO photos (name, file) VALUES ('$name', '$file')";
     if (mysqli_query($connect, $query)) {
-      echo "L'élément a été modifié avec succès.<br>";
+      echo "L'élément a été ajouté avec succès.<br>";
     } 
     else {
       echo "Error: " . $query . "<br>" . mysqli_error($connect);

@@ -16,7 +16,7 @@
 
 	7-Vous pouvez importer le fichier registration.sql en cliquant sur "Importer". Sélectionnez le fichier sql fournis cliquez sur le bouton "Exécuter" pour importer la base de données.
 
-	8-En inserent se fichier un compte administrateur est crée email: ... mdp: ppm.
+	8-En inserent se fichier un compte administrateur est crée email: testadmin@test.admin mdp: ppm.
 
 	8- Sur la page d'acceuil Mamp vous avez les differents élement de connexion a la base de donnée, allez dans le fichier config2.php et modifier cette ligne avec les données fournit par votre mamp <?php $host = 'localhost'; $username = 'root'; $password = 'root'; $dbname = 'nom de la table'; $connect = mysqli_connect($host, $username, $password, $dbname); "enregistrez"
 

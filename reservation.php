@@ -164,7 +164,7 @@ require ("config2.php");
           <?php }?>
               <label for="tel">Téléphone :</label>
               <input type="text" class="box-input" id="tel" name="tel" required>
-              <input type="submit" id="submit" name="submit" value="reserver" class="box-button"/>  
+              <input type="submit" style="background: black; color: white;" id="submit" name="submit" value="Reservez" class="box-button"/>   
           </form>
          </div>
        </form>
