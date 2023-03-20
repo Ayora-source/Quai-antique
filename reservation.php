@@ -4,7 +4,7 @@ require ("config2.php");
 <!DOCTYPE html>
 <html lang="fr"> 
   <head>
-    <title>Quai Antique</title>
+    <title> Réservation-Quai Antique</title>
     <?php include 'head.php'?>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>

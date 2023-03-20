@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr"> 
   <head>
-    <title>Quai Antique</title>
+    <title>Crée un compte</title>
     <?php include 'head.php'?>
   </head>
   <body>
