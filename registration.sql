@@ -80,7 +80,7 @@ CREATE TABLE `type` (
 INSERT INTO `type` (`id`, `type`) VALUES
 (1, 'entree'),
 (2, 'plat'),
-(3, 'dessert');
+(3, 'dessert'); 
 
 
 CREATE TABLE `users` (
@@ -96,5 +96,5 @@ CREATE TABLE `users` (
 
 
 INSERT INTO `users` (`id`, `username`, `firstname`, `email`, `covers`, `allergy`, `type`, `password`) VALUES
-(1, 'admin', 'test', 'testadmin@testadmin', 0, '', 'admin', '616c1af8cc7f4556975b7cbe50bce072e87a5e5c4c14b3ccb87575fc547b3167');
+(1, 'admin', 'test', 'testadmin@test.admin', 0, '', 'admin', '616c1af8cc7f4556975b7cbe50bce072e87a5e5c4c14b3ccb87575fc547b3167');
 
