@@ -14,11 +14,10 @@
 
 	6- Cliquez sur "Importer" dans la navigation, importer le fichier CREATE-DATABASE.sql cliquez sur le bouton "Exécuter" pour créer une nouvelle base de données pour votre application.
 
-<<<<<<< HEAD
 	7-Vous pouvez importer le fichier registration.sql en cliquant sur "Importer". Sélectionnez le fichier sql fourni -> cliquez sur le bouton "Exécuter" pour importer la base de données.
-=======
+	
 	7-Cliquez dans votre base, vous pouvez importer le fichier registration.sql en cliquant sur "Importer". Sélectionnez le fichier sql fournis -> cliquez sur le bouton "Exécuter" pour importer la base de données.
->>>>>>> 3a5d4c75cb88c5fa627a35600768b5ca7a6a2f55
+
 
 	8-En insérant ce fichier un compte administrateur est crée email: testadmin@test.admin mdp: ppm.
 
